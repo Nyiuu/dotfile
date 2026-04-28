@@ -1,0 +1,55 @@
+@import "wallust-colors.css";
+
+* {
+  background-image: none;
+  box-shadow: none;
+  font-family: "JetBrainsMono Nerd Font", sans-serif;
+}
+
+window {
+  background-color: alpha(@background, 0.78);
+}
+
+button {
+  color: @foreground;
+  background-color: @background-alt;
+  border: 2px solid @accent;
+  border-radius: 8px;
+  background-repeat: no-repeat;
+  background-position: center 34%;
+  background-size: 24%;
+  margin: 8px;
+}
+
+button:hover,
+button:focus {
+  color: @background;
+  background-color: @accent;
+  outline-style: none;
+}
+
+button label {
+  margin-top: 88px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+#lock {
+  background-image: image(url("/usr/share/wlogout/icons/lock.png"));
+}
+
+#logout {
+  background-image: image(url("/usr/share/wlogout/icons/logout.png"));
+}
+
+#suspend {
+  background-image: image(url("/usr/share/wlogout/icons/suspend.png"));
+}
+
+#shutdown {
+  background-image: image(url("/usr/share/wlogout/icons/shutdown.png"));
+}
+
+#reboot {
+  background-image: image(url("/usr/share/wlogout/icons/reboot.png"));
+}

@@ -1,0 +1,250 @@
+/* Inspired by JaKooLit's "Neon Circuit" Waybar style, adapted for niri. */
+
+@import "wallust/colors-waybar.css";
+
+@define-color bar-bg rgba(0, 0, 0, 0);
+@define-color main-bg @background-alt;
+@define-color main-fg @color12;
+@define-color active-bg @color12;
+@define-color active-fg @background;
+@define-color hover-bg @color13;
+@define-color hover-fg @background;
+@define-color pink @color1;
+@define-color peach @color11;
+@define-color teal @color14;
+@define-color text @foreground;
+@define-color rose @color15;
+
+* {
+  border: none;
+  border-radius: 0;
+  min-height: 0;
+  font-family: "JetBrainsMono Nerd Font", "Font Awesome 7 Free", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+window#waybar {
+  background: @bar-bg;
+  color: @main-fg;
+}
+
+tooltip {
+  background: @main-bg;
+  color: @text;
+  border: 2px solid @main-fg;
+  border-radius: 8px;
+}
+
+tooltip label {
+  padding: 6px;
+}
+
+#custom-launcher,
+#workspaces,
+#window,
+#clock,
+#custom-wallpaper,
+#mpris,
+#cpu,
+#memory,
+#temperature,
+#backlight,
+#wireplumber,
+#network,
+#battery,
+#tray,
+#custom-notifications,
+#custom-power {
+  background: @main-bg;
+  color: @main-fg;
+  border: 2px solid @main-fg;
+  margin: 3px 0;
+  padding: 0 9px;
+}
+
+#custom-launcher {
+  color: #ff5a5a;
+  border-color: @text;
+  border-radius: 6px 0 6px 0;
+  margin-left: 6px;
+  padding: 0 10px;
+}
+
+#custom-launcher:hover,
+#custom-wallpaper:hover,
+#custom-notifications:hover,
+#custom-power:hover,
+#network:hover,
+#wireplumber:hover,
+#backlight:hover,
+#cpu:hover {
+  background: @hover-bg;
+  color: @hover-fg;
+}
+
+#custom-wallpaper {
+  color: @teal;
+  border-color: @teal;
+  border-radius: 12px 0 12px 0;
+  margin-right: 6px;
+}
+
+#workspaces {
+  border-radius: 18px;
+  padding: 0 7px;
+}
+
+#workspaces button {
+  background: @active-bg;
+  color: @active-fg;
+  border: 2px solid @active-bg;
+  border-radius: 10px;
+  margin: 3px 1px;
+  padding: 0 6px;
+  transition: all 180ms ease;
+}
+
+#workspaces button.focused,
+#workspaces button.active {
+  background-image: linear-gradient(45deg, #89b4fa 50%, #cba6f7 50%);
+  color: @active-fg;
+  border-radius: 12px;
+  padding: 0 12px;
+}
+
+#workspaces button.empty {
+  background: transparent;
+  color: @main-fg;
+}
+
+#workspaces button.urgent {
+  background: @pink;
+  color: @active-fg;
+}
+
+#workspaces button:hover {
+  background: @hover-bg;
+  color: @hover-fg;
+}
+
+#window {
+  background-image: linear-gradient(45deg, #89b4fa 50%, #cba6f7 50%);
+  color: black;
+  border-color: @rose;
+  border-left-style: none;
+  border-right-style: none;
+  border-radius: 18px;
+  margin-right: 6px;
+}
+
+window#waybar.empty #window {
+  opacity: 0;
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+#clock {
+  color: @pink;
+  border-color: @pink;
+  border-left-style: none;
+  border-right-style: none;
+  border-radius: 12px 0 12px 0;
+}
+
+#mpris {
+  color: @teal;
+  border-color: @teal;
+  border-radius: 12px 0 12px 0;
+}
+
+#cpu {
+  color: @text;
+  border-color: @text;
+  border-right-style: none;
+  border-radius: 18px 0 0 18px;
+}
+
+#memory {
+  color: @text;
+  border-color: @text;
+  border-left-style: none;
+  border-right-style: none;
+}
+
+#temperature {
+  color: @text;
+  border-color: @text;
+  border-left-style: none;
+  border-radius: 0 18px 18px 0;
+  margin-right: 6px;
+}
+
+#temperature.critical {
+  background: @pink;
+  color: @active-fg;
+}
+
+#backlight {
+  color: @rose;
+  border-color: @rose;
+  border-right-style: none;
+  border-radius: 12px 0 0 12px;
+}
+
+#wireplumber {
+  color: @rose;
+  border-color: @rose;
+  border-left-style: none;
+  border-radius: 0 18px 18px 0;
+  margin-right: 6px;
+}
+
+#wireplumber.muted {
+  color: @pink;
+}
+
+#network {
+  color: @peach;
+  border-color: @peach;
+  border-radius: 12px 0 12px 0;
+  margin-right: 6px;
+}
+
+#battery {
+  color: @main-fg;
+  border-color: @main-fg;
+  border-radius: 18px 0 0 18px;
+}
+
+#battery.warning {
+  color: @peach;
+  border-color: @peach;
+}
+
+#battery.critical:not(.charging) {
+  background: @pink;
+  color: @active-fg;
+}
+
+#tray {
+  border-left-style: none;
+  border-right-style: none;
+  padding: 0 8px;
+}
+
+#custom-notifications {
+  color: @main-fg;
+  border-color: @main-fg;
+  border-right-style: none;
+  border-radius: 12px 0 0 12px;
+}
+
+#custom-power {
+  color: @pink;
+  border-color: @pink;
+  border-left-style: none;
+  border-radius: 0 12px 12px 0;
+  margin-right: 6px;
+}

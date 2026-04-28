@@ -19,3 +19,6 @@ backups/
 # App-generated backup files
 *.bak
 *.bak.*
+
+# Generated/current wallpaper state
+config/rofi/.current_wallpaper

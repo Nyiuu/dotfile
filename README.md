@@ -43,7 +43,24 @@ The script is idempotent for links it already manages. Files in `home/` are link
 docker build -f docker/arch/Dockerfile .
 ```
 
-The Docker image validates the Arch official repository dependencies and checks that the dotfile symlinks can be created. AUR/third-party packages such as `waypaper`, `niriswitcher`, and `clash-verge-rev` are intentionally skipped in Docker.
+If the default Docker bridge network is unavailable, use host networking:
+
+```sh
+docker build --network=host -f docker/arch/Dockerfile .
+```
+
+If Docker Hub or Arch mirrors need your local proxy, pass it as build args:
+
+```sh
+docker build --network=host \
+  --build-arg http_proxy=http://127.0.0.1:7897 \
+  --build-arg https_proxy=http://127.0.0.1:7897 \
+  --build-arg all_proxy=socks5://127.0.0.1:7897 \
+  --build-arg no_proxy=localhost,127.0.0.1,::1 \
+  -f docker/arch/Dockerfile .
+```
+
+The Docker image validates the Arch official repository dependencies and checks that the dotfile symlinks can be created. AUR/third-party packages such as `waypaper`, `niriswitcher`, `clash-verge-rev`, `wallust`, `wlogout`, and `swww-git` are intentionally skipped in Docker.
 
 ## First Push To GitHub
 

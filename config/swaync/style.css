@@ -1,0 +1,107 @@
+@import "wallust/colors-swaync.css";
+
+* {
+  font-family: "JetBrainsMono Nerd Font", sans-serif;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+notificationwindow,
+blankwindow,
+.floating-notifications {
+  background: transparent;
+}
+
+.control-center {
+  background: @background-alt;
+  color: @foreground;
+  border: 2px solid @accent;
+  border-radius: 8px;
+}
+
+.notification-row {
+  outline: none;
+}
+
+.notification-row .notification-background {
+  padding: 6px 10px;
+}
+
+.notification {
+  background: @background-alt;
+  color: @foreground;
+  border: 2px solid @accent;
+  border-radius: 8px;
+}
+
+.notification.critical {
+  border-color: @urgent;
+}
+
+.notification-default-action,
+.notification-action {
+  color: @foreground;
+  background: transparent;
+  border-radius: 8px;
+}
+
+.notification-default-action:hover,
+.notification-action:hover {
+  background: alpha(@accent, 0.22);
+}
+
+.close-button {
+  background: @urgent;
+  color: @background;
+  border-radius: 999px;
+  border: none;
+  min-width: 24px;
+  min-height: 24px;
+}
+
+.summary {
+  color: @foreground;
+  font-size: 15px;
+}
+
+.body,
+.time {
+  color: alpha(@foreground, 0.82);
+}
+
+.widget-title,
+.widget-dnd,
+.widget-mpris,
+.widget-volume,
+.widget-backlight,
+.widget-buttons-grid {
+  background: alpha(@background, 0.72);
+  color: @foreground;
+  border-radius: 8px;
+  margin: 8px;
+  padding: 8px;
+}
+
+.widget-title > button,
+.widget-buttons-grid > flowbox > flowboxchild > button {
+  background: transparent;
+  color: @foreground;
+  border: 1px solid @accent;
+  border-radius: 8px;
+}
+
+.widget-title > button:hover,
+.widget-buttons-grid > flowbox > flowboxchild > button:hover {
+  background: @accent;
+  color: @background;
+}
+
+.widget-dnd > switch {
+  background: @background;
+  border: 1px solid @accent;
+  border-radius: 999px;
+}
+
+.widget-dnd > switch:checked {
+  background: @accent;
+}

@@ -1,0 +1,72 @@
+@import "../wallust/colors-rofi.rasi"
+
+* {
+  text-color: @foreground;
+  background-color: transparent;
+}
+
+window {
+  width: 36%;
+  location: center;
+  anchor: center;
+  border: 2px;
+  border-color: @border-color;
+  border-radius: 8px;
+  background-color: @background-alt;
+}
+
+mainbox {
+  padding: 12px;
+  spacing: 10px;
+}
+
+inputbar {
+  padding: 8px 10px;
+  border-radius: 6px;
+  background-color: @background;
+  text-color: @foreground;
+}
+
+prompt {
+  padding: 0 10px 0 0;
+  text-color: @selected;
+}
+
+entry {
+  text-color: @foreground;
+  placeholder-color: @foreground;
+}
+
+listview {
+  columns: 1;
+  lines: 10;
+  fixed-height: true;
+  spacing: 4px;
+  scrollbar: false;
+}
+
+element {
+  padding: 8px 10px;
+  border-radius: 6px;
+  text-color: @foreground;
+}
+
+element selected {
+  background-color: @selected;
+  text-color: @background;
+}
+
+element-icon {
+  size: 22px;
+  margin: 0 10px 0 0;
+}
+
+element-text {
+  vertical-align: 0.5;
+}
+
+message {
+  padding: 8px;
+  border-radius: 6px;
+  background-color: @background;
+}

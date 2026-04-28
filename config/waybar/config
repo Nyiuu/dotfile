@@ -1,0 +1,205 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 38,
+  "spacing": 4,
+  "fixed-center": true,
+  "reload_style_on_change": true,
+
+  "modules-left": [
+    "custom/launcher",
+    "niri/workspaces",
+    "niri/window"
+  ],
+  "modules-center": [
+    "clock"
+  ],
+  "modules-right": [
+    "custom/wallpaper",
+    "mpris",
+    "cpu",
+    "memory",
+    "temperature",
+    "backlight",
+    "wireplumber",
+    "network",
+    "battery",
+    "tray",
+    "custom/notifications",
+    "custom/power"
+  ],
+
+  "custom/launcher": {
+    "format": "  ",
+    "tooltip": true,
+    "tooltip-format": "Left: applications\nRight: desktop menu",
+    "on-click": "$HOME/.config/waybar/scripts/menu.sh launcher",
+    "on-click-right": "$HOME/.config/waybar/scripts/menu.sh menu"
+  },
+
+  "custom/wallpaper": {
+    "format": "",
+    "tooltip": true,
+    "tooltip-format": "Left: choose wallpaper\nRight: regenerate wallust theme",
+    "on-click": "$HOME/.config/waybar/scripts/menu.sh wallpaper",
+    "on-click-right": "$HOME/.config/waybar/scripts/menu.sh theme"
+  },
+
+  "niri/workspaces": {
+    "format": "{icon}",
+    "all-outputs": false,
+    "disable-click": false,
+    "format-icons": {
+      "focused": "",
+      "active": "",
+      "urgent": "",
+      "empty": "",
+      "default": ""
+    }
+  },
+
+  "niri/window": {
+    "format": "{title}",
+    "icon": true,
+    "icon-size": 16,
+    "separate-outputs": true,
+    "max-length": 64,
+    "rewrite": {
+      "(.*) - zsh": " $1",
+      "(.*) - nvim": " $1",
+      "(.*) - Mozilla Firefox": " $1",
+      "(.*) - Google Chrome": " $1"
+    }
+  },
+
+  "clock": {
+    "interval": 1,
+    "format": " {:%H:%M:%S}",
+    "format-alt": " {:%Y-%m-%d  %A}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "month",
+      "weeks-pos": "right",
+      "format": {
+        "months": "<span color='#f5c2e7'><b>{}</b></span>",
+        "weekdays": "<span color='#fab387'><b>{}</b></span>",
+        "today": "<span color='#f38ba8'><b><u>{}</u></b></span>"
+      }
+    }
+  },
+
+  "mpris": {
+    "format": "{status_icon} {title}",
+    "format-paused": "{status_icon} {title}",
+    "format-stopped": "",
+    "tooltip-format": "{player}: {artist} - {title}",
+    "title-len": 28,
+    "artist-len": 18,
+    "status-icons": {
+      "playing": "",
+      "paused": "",
+      "stopped": ""
+    },
+    "on-click": "playerctl play-pause",
+    "on-click-middle": "playerctl previous",
+    "on-click-right": "playerctl next"
+  },
+
+  "cpu": {
+    "interval": 2,
+    "format": " {usage}%",
+    "tooltip": false,
+    "on-click": "alacritty -e btop"
+  },
+
+  "memory": {
+    "interval": 5,
+    "format": " {percentage}%",
+    "tooltip-format": "{used:0.1f}G / {total:0.1f}G"
+  },
+
+  "temperature": {
+    "interval": 10,
+    "critical-threshold": 82,
+    "format": " {temperatureC}°C",
+    "format-critical": " {temperatureC}°C"
+  },
+
+  "backlight": {
+    "format": "{icon} {percent}%",
+    "format-icons": ["", "", "", "󰃝", "󰃞", "󰃟", "󰃠"],
+    "tooltip-format": "Brightness {percent}%",
+    "on-scroll-up": "brightnessctl --class=backlight set +5%",
+    "on-scroll-down": "brightnessctl --class=backlight set 5%-"
+  },
+
+  "wireplumber": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟 muted",
+    "format-icons": ["", "", ""],
+    "scroll-step": 5,
+    "tooltip-format": "{node_name}",
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle",
+    "on-click-right": "alacritty -e sh -lc 'wpctl status; read -r -p \"Press Enter to close...\"'"
+  },
+
+  "network": {
+    "interval": 5,
+    "format-wifi": " {essid}",
+    "format-ethernet": "󰈀 {ifname}",
+    "format-linked": "󰈀 {ifname}",
+    "format-disconnected": "󰤭",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ipaddr}",
+    "tooltip-format-ethernet": "{ifname}\n{ipaddr}",
+    "tooltip-format-disconnected": "Disconnected",
+    "on-click": "alacritty -e nmtui"
+  },
+
+  "battery": {
+    "states": {
+      "good": 95,
+      "warning": 30,
+      "critical": 15
+    },
+    "format": "{icon} {capacity}%",
+    "format-charging": " {capacity}%",
+    "format-plugged": "󱘖 {capacity}%",
+    "format-full": " Full",
+    "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+    "tooltip-format": "{timeTo}  {power}W"
+  },
+
+  "tray": {
+    "icon-size": 16,
+    "spacing": 8
+  },
+
+  "custom/notifications": {
+    "format": "{} {icon}",
+    "format-icons": {
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": "",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": "",
+      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": ""
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "tooltip": true,
+    "tooltip-format": "Left: notification center\nRight: do not disturb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
+
+  "custom/power": {
+    "format": "",
+    "tooltip": true,
+    "tooltip-format": "Power menu",
+    "on-click": "$HOME/.config/waybar/scripts/menu.sh power"
+  }
+}

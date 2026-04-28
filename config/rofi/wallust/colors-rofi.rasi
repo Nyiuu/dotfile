@@ -1,0 +1,26 @@
+* {
+  background: #151515;
+  background-alt: rgba(21,21,21, 0.72);
+  foreground: #E6E6E6;
+  selected: #919191;
+  urgent: #B5A6A1;
+  active: #7A7A7A;
+  border-color: #919191;
+
+  color0: #3C3C3C;
+  color1: #67403E;
+  color2: #504E4D;
+  color3: #5C5C5C;
+  color4: #6C6C6C;
+  color5: #887C79;
+  color6: #8A8A8A;
+  color7: #D3D3D3;
+  color8: #949494;
+  color9: #895553;
+  color10: #6B6866;
+  color11: #7A7A7A;
+  color12: #919191;
+  color13: #B5A6A1;
+  color14: #B8B8B8;
+  color15: #D3D3D3;
+}

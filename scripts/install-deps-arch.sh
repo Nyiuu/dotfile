@@ -31,6 +31,8 @@ pacman_packages=(
   alacritty
   niri
   waybar
+  rofi
+  swaync
   mako
   wl-clipboard
   cliphist
@@ -41,7 +43,9 @@ pacman_packages=(
   playerctl
   brightnessctl
   pipewire
+  pipewire-jack
   wireplumber
+  xdg-desktop-portal-gtk
   fuzzel
   satty
   awww
@@ -51,6 +55,9 @@ aur_packages=(
   waypaper
   niriswitcher
   clash-verge-rev
+  wallust
+  wlogout
+  swww-git
 )
 
 install_pacman_packages() {
