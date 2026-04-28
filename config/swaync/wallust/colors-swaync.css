@@ -1,6 +1,6 @@
-@define-color foreground #E6E6E6;
-@define-color background #151515;
-@define-color background-alt rgba(21,21,21, 0.72);
-@define-color accent #919191;
-@define-color urgent #B5A6A1;
-@define-color active #7A7A7A;
+@define-color foreground #F2F0E2;
+@define-color background #252523;
+@define-color background-alt rgba(37,37,35, 0.72);
+@define-color accent #BBB695;
+@define-color urgent #D9D3AD;
+@define-color active #9D997D;
