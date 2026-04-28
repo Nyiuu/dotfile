@@ -1706,6 +1706,71 @@
   # typeset -g POWERLEVEL9K_EXAMPLE_FOREGROUND=208
   # typeset -g POWERLEVEL9K_EXAMPLE_VISUAL_IDENTIFIER_EXPANSION='⭐'
 
+  ####################################[ gruvbox overrides ]####################################
+  # Gruvbox dark palette, using 256-color approximations for Powerlevel10k.
+  local gruvbox_bg0=235
+  local gruvbox_bg1=236
+  local gruvbox_bg3=237
+  local gruvbox_fg0=223
+  local gruvbox_fg2=250
+  local gruvbox_gray=245
+  local gruvbox_red=124
+  local gruvbox_green=106
+  local gruvbox_yellow=172
+  local gruvbox_blue=66
+  local gruvbox_purple=132
+  local gruvbox_aqua=72
+  local gruvbox_orange=166
+
+  typeset -g POWERLEVEL9K_BACKGROUND=$gruvbox_bg0
+  typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="%${gruvbox_gray}F╭─"
+  typeset -g POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_PREFIX="%${gruvbox_gray}F├─"
+  typeset -g POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="%${gruvbox_gray}F╰─"
+  typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_SUFFIX="%${gruvbox_gray}F─╮"
+  typeset -g POWERLEVEL9K_MULTILINE_NEWLINE_PROMPT_SUFFIX="%${gruvbox_gray}F─┤"
+  typeset -g POWERLEVEL9K_MULTILINE_LAST_PROMPT_SUFFIX="%${gruvbox_gray}F─╯"
+  typeset -g POWERLEVEL9K_MULTILINE_FIRST_PROMPT_GAP_FOREGROUND=$gruvbox_bg3
+  typeset -g POWERLEVEL9K_LEFT_SUBSEGMENT_SEPARATOR="%${gruvbox_bg3}F│"
+  typeset -g POWERLEVEL9K_RIGHT_SUBSEGMENT_SEPARATOR="%${gruvbox_bg3}F│"
+  typeset -g POWERLEVEL9K_LEFT_PROMPT_LAST_SEGMENT_END_SYMBOL="%${gruvbox_bg3}F▓▒░"
+  typeset -g POWERLEVEL9K_RIGHT_PROMPT_FIRST_SEGMENT_START_SYMBOL="%${gruvbox_bg3}F░▒▓"
+
+  typeset -g POWERLEVEL9K_OS_ICON_FOREGROUND=$gruvbox_orange
+  typeset -g POWERLEVEL9K_DIR_FOREGROUND=$gruvbox_aqua
+  typeset -g POWERLEVEL9K_DIR_SHORTENED_FOREGROUND=$gruvbox_gray
+  typeset -g POWERLEVEL9K_DIR_ANCHOR_FOREGROUND=$gruvbox_blue
+  typeset -g POWERLEVEL9K_VCS_CLEAN_FOREGROUND=$gruvbox_green
+  typeset -g POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND=$gruvbox_aqua
+  typeset -g POWERLEVEL9K_VCS_MODIFIED_FOREGROUND=$gruvbox_yellow
+  typeset -g POWERLEVEL9K_STATUS_OK_FOREGROUND=$gruvbox_green
+  typeset -g POWERLEVEL9K_STATUS_OK_PIPE_FOREGROUND=$gruvbox_green
+  typeset -g POWERLEVEL9K_STATUS_ERROR_FOREGROUND=$gruvbox_red
+  typeset -g POWERLEVEL9K_STATUS_ERROR_SIGNAL_FOREGROUND=$gruvbox_red
+  typeset -g POWERLEVEL9K_STATUS_ERROR_PIPE_FOREGROUND=$gruvbox_red
+  typeset -g POWERLEVEL9K_COMMAND_EXECUTION_TIME_FOREGROUND=$gruvbox_gray
+  typeset -g POWERLEVEL9K_BACKGROUND_JOBS_FOREGROUND=$gruvbox_aqua
+  typeset -g POWERLEVEL9K_DIRENV_FOREGROUND=$gruvbox_yellow
+  typeset -g POWERLEVEL9K_ASDF_FOREGROUND=$gruvbox_blue
+  typeset -g POWERLEVEL9K_CONTEXT_ROOT_FOREGROUND=$gruvbox_red
+  typeset -g POWERLEVEL9K_CONTEXT_{REMOTE,REMOTE_SUDO}_FOREGROUND=$gruvbox_yellow
+  typeset -g POWERLEVEL9K_CONTEXT_FOREGROUND=$gruvbox_fg2
+  typeset -g POWERLEVEL9K_VI_MODE_NORMAL_FOREGROUND=$gruvbox_green
+  typeset -g POWERLEVEL9K_VI_MODE_VISUAL_FOREGROUND=$gruvbox_purple
+  typeset -g POWERLEVEL9K_VI_MODE_OVERWRITE_FOREGROUND=$gruvbox_orange
+  typeset -g POWERLEVEL9K_VI_MODE_INSERT_FOREGROUND=$gruvbox_blue
+  typeset -g POWERLEVEL9K_NVM_FOREGROUND=$gruvbox_green
+  typeset -g POWERLEVEL9K_NODE_VERSION_FOREGROUND=$gruvbox_green
+  typeset -g POWERLEVEL9K_RUST_VERSION_FOREGROUND=$gruvbox_orange
+  typeset -g POWERLEVEL9K_GO_VERSION_FOREGROUND=$gruvbox_aqua
+  typeset -g POWERLEVEL9K_PACKAGE_FOREGROUND=$gruvbox_blue
+  typeset -g POWERLEVEL9K_TODO_FOREGROUND=$gruvbox_blue
+  typeset -g POWERLEVEL9K_TIME_FOREGROUND=$gruvbox_aqua
+  typeset -g POWERLEVEL9K_BATTERY_LOW_FOREGROUND=$gruvbox_red
+  typeset -g POWERLEVEL9K_BATTERY_{CHARGING,CHARGED}_FOREGROUND=$gruvbox_green
+  typeset -g POWERLEVEL9K_BATTERY_DISCONNECTED_FOREGROUND=$gruvbox_yellow
+  typeset -g POWERLEVEL9K_PROMPT_CHAR_OK_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND=$gruvbox_green
+  typeset -g POWERLEVEL9K_PROMPT_CHAR_ERROR_{VIINS,VICMD,VIVIS,VIOWR}_FOREGROUND=$gruvbox_red
+
   # Transient prompt works similarly to the builtin transient_rprompt option. It trims down prompt
   # when accepting a command line. Supported values:
   #
