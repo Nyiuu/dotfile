@@ -6,7 +6,7 @@ Personal dotfiles for zsh, niri, Neovim, zellij, yazi, alacritty, and related to
 
 - `home/` maps to `$HOME`
 - `config/` maps to `${XDG_CONFIG_HOME:-$HOME/.config}`
-- `scripts/install.sh` creates symlinks and backs up existing files into `backups/`
+- `scripts/install.sh` creates symlinks and backs up existing files/directories into `backups/`
 
 Current tracked configs:
 
@@ -25,7 +25,7 @@ Current tracked configs:
 ./scripts/install.sh
 ```
 
-The script is idempotent for links it already manages. If a target file already exists, it is moved into `backups/<timestamp>/` before the symlink is created.
+The script is idempotent for links it already manages. Files in `home/` are linked individually. Top-level directories in `config/` are linked as whole config directories, for example `~/.config/nvim -> config/nvim`. If a target already exists, it is moved into `backups/<timestamp>/` before the symlink is created.
 
 ## First Push To GitHub
 

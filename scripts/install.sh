@@ -26,6 +26,27 @@ link_file() {
   printf 'link: %s -> %s\n' "$target" "$source"
 }
 
+link_path() {
+  local source="$1"
+  local target="$2"
+
+  mkdir -p "$(dirname "$target")"
+
+  if [[ -L "$target" && "$(readlink "$target")" == "$source" ]]; then
+    printf 'ok: %s\n' "$target"
+    return
+  fi
+
+  if [[ -e "$target" || -L "$target" ]]; then
+    mkdir -p "$backup_dir"
+    mv "$target" "$backup_dir/"
+    printf 'backup: %s -> %s/\n' "$target" "$backup_dir"
+  fi
+
+  ln -s "$source" "$target"
+  printf 'link: %s -> %s\n' "$target" "$source"
+}
+
 if [[ -d "$repo_dir/home" ]]; then
   while IFS= read -r -d '' file; do
     rel="${file#"$repo_dir/home/"}"
@@ -34,10 +55,10 @@ if [[ -d "$repo_dir/home" ]]; then
 fi
 
 if [[ -d "$repo_dir/config" ]]; then
-  while IFS= read -r -d '' file; do
-    rel="${file#"$repo_dir/config/"}"
-    link_file "$file" "$xdg_config_home/$rel"
-  done < <(find "$repo_dir/config" -type f ! -name '.gitkeep' -print0)
+  while IFS= read -r -d '' entry; do
+    rel="${entry#"$repo_dir/config/"}"
+    link_path "$entry" "$xdg_config_home/$rel"
+  done < <(find "$repo_dir/config" -mindepth 1 -maxdepth 1 ! -name '.gitkeep' -print0)
 fi
 
 printf '\nDone.\n'
