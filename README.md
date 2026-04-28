@@ -2,6 +2,12 @@
 
 Personal dotfiles for zsh, niri, Neovim, zellij, yazi, alacritty, waybar, and related tools.
 
+## Showcase
+
+<p align="center">
+  <img src="assets/screenshots/nvim-config.png" alt="Neovim configuration in the niri desktop" width="900">
+</p>
+
 ## Layout
 
 - `home/` maps to `$HOME`
@@ -12,12 +18,19 @@ Current tracked configs:
 
 - `home/.zshrc`
 - `home/.p10k.zsh`
+- `config/alacritty/alacritty.toml`
 - `config/niri/config.kdl`
 - `config/nvim/init.lua`
 - `config/nvim/nvim-pack-lock.json`
+- `config/rofi/`
+- `config/swaync/`
+- `config/swww/`
+- `config/wallust/`
+- `config/waybar/`
+- `config/wlogout/`
 - `config/zellij/config.kdl`
 
-`config/yazi/`, `config/alacritty/`, and `config/waybar/` are present as placeholders because no local configs were found yet.
+`config/yazi/` is present as a placeholder because no local config was found yet.
 
 ## Install
 
