@@ -1,0 +1,21 @@
+.codex
+.DS_Store
+
+# Shell/runtime state
+*.zwc
+.zcompdump*
+*.history
+*_history
+
+# Editor and cache files
+*.swp
+*.swo
+*~
+.cache/
+
+# Local backups created by install script
+backups/
+
+# App-generated backup files
+*.bak
+*.bak.*
