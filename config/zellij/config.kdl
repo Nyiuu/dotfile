@@ -315,7 +315,7 @@ theme "gruvbox-dark"
 themes {
    gruvbox-dark {
       fg 213 196 161
-      bg 40 40 40
+      bg 30 30 46
       black 60 56 54
       red 204 36 29
       green 152 151 26
@@ -370,7 +370,7 @@ themes {
 //   - true (default, enabled)
 //   - false
 // 
-// pane_frames false
+pane_frames false
  
 // When attaching to an existing session with other users,
 // should the session be mirrored (true)

@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-wallpaper_dir="${WALLPAPER_DIR:-$HOME/Pictures/Wallpaper}"
+wallpaper_dir="${WALLPAPER_DIR:-$HOME/.config/swww/wallpapers}"
 current_wallpaper="$HOME/.config/rofi/.current_wallpaper"
 rofi_theme="$HOME/.config/rofi/config.rasi"
 
