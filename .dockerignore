@@ -1,0 +1,8 @@
+.git
+.codex
+backups
+.cache
+*.zwc
+.zcompdump*
+*.history
+*_history
