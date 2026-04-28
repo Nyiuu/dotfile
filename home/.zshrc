@@ -59,6 +59,11 @@ export http_proxy=http://127.0.0.1:7897
 export all_proxy=socks5://127.0.0.1:7897
 export no_proxy=localhost,127.0.0.1,::1
 
+# ROCm / HIP
+export ROCM_PATH=/opt/rocm
+export HIP_PATH=/opt/rocm
+export PATH="$ROCM_PATH/bin:$PATH"
+
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
