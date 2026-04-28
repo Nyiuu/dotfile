@@ -5,6 +5,8 @@ Personal dotfiles for zsh, niri, Neovim, zellij, yazi, alacritty, waybar, and re
 ## Showcase
 
 <p align="center">
+  <img src="assets/screenshots/desktop.png" alt="niri desktop with waybar, alacritty, and swaync" width="900">
+  <br>
   <img src="assets/screenshots/nvim-config.png" alt="Neovim configuration in the niri desktop" width="900">
 </p>
 
