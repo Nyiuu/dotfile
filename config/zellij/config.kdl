@@ -298,7 +298,7 @@ web_client {
 //   - true
 //   - false (Default)
 // 
-// simplified_ui true
+simplified_ui true
  
 // Enable OSC8 hyperlink output
 // Options:
@@ -344,12 +344,12 @@ themes {
 // The name of the default layout to load on startup
 // Default: "default"
 // 
-// default_layout "compact"
+default_layout "nyiuu"
  
 // The folder in which Zellij will look for layouts
 // (Requires restart)
 // 
-// layout_dir "/tmp"
+layout_dir "/home/nyiuu/.config/zellij/layouts"
  
 // The folder in which Zellij will look for themes
 // (Requires restart)
@@ -371,6 +371,12 @@ themes {
 //   - false
 // 
 pane_frames false
+
+ui {
+    pane_frames {
+        hide_session_name true
+    }
+}
  
 // When attaching to an existing session with other users,
 // should the session be mirrored (true)

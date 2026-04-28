@@ -1,0 +1,11 @@
+layout {
+    pane
+    pane split_direction="Vertical" size=1 {
+        pane size="30%" borderless=true {
+            plugin location="tab-bar"
+        }
+        pane size="70%" borderless=true {
+            plugin location="status-bar"
+        }
+    }
+}
