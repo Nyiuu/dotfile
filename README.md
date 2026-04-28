@@ -1,6 +1,6 @@
 # dotfile
 
-Personal dotfiles for zsh, niri, Neovim, zellij, yazi, alacritty, and related tools.
+Personal dotfiles for zsh, niri, Neovim, zellij, yazi, alacritty, waybar, and related tools.
 
 ## Layout
 
@@ -17,7 +17,7 @@ Current tracked configs:
 - `config/nvim/nvim-pack-lock.json`
 - `config/zellij/config.kdl`
 
-`config/yazi/` and `config/alacritty/` are present as placeholders because no local configs were found yet.
+`config/yazi/`, `config/alacritty/`, and `config/waybar/` are present as placeholders because no local configs were found yet.
 
 ## Install
 
